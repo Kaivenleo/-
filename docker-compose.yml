@@ -1,0 +1,11 @@
+services:
+  iptv-player:
+    image: nginx:alpine
+    container_name: iptv-player
+    ports:
+      - "1905:80"
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./player:/usr/share/nginx/html
+    restart: unless-stopped
